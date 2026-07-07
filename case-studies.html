@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f2f7e6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#181c13" media="(prefers-color-scheme: dark)">
+<meta name="author" content="Emin Beganovic">
+<title>Case Studies — Emin Beganovic · B2B Marketing · Web &amp; Design</title>
+<meta name="description" content="Selected work by Emin Beganovic — B2B marketing consultant and web builder. Four roles across software, engineering, and healthcare M&amp;A advisory.">
+<meta property="og:title" content="Case Studies — Emin Beganovic">
+<meta property="og:description" content="Selected work across B2B software, engineering/BIM, and healthcare M&amp;A advisory.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23181c13'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='54' font-style='italic' fill='%239cc69b' text-anchor='middle'%3Ee%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f2f7e6;--paper-2:#e3efcd;--tint:#d7f2ba;--ink:#2b3126;--ink-2:#465040;
+  --muted:#676f54;--line:#c6d5ab;--accent:#79b4a9;--accent-ink:#3f7c70;--accent-soft:#9cc69b;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#181c13;--paper-2:#212819;--tint:#242e1c;--ink:#e9f1d9;--ink-2:#ccd7b8;
+  --muted:#99a383;--line:#39422c;--accent:#9cc69b;--accent-ink:#a9d3a8;--accent-soft:#79b4a9;
+}}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;background:var(--paper)}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--tint);color:var(--ink)}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:400;line-height:1.08;letter-spacing:-0.015em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px;position:relative;z-index:2}
+.lab{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.lab b{color:var(--ink);font-weight:600}
+
+nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--paper) 86%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:'Fraunces',serif;font-size:17px;font-style:italic;color:var(--ink)}
+.nav-links{display:flex;gap:26px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;align-items:center}
+.nav-links a{color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--accent-ink)}
+.nav-cta{color:var(--paper) !important;background:var(--ink);padding:9px 18px;border-radius:2px;transition:background .25s}
+.nav-cta:hover{background:var(--accent-ink)}
+@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}}
+
+.head{padding:64px 0 30px}
+.head .top-meta{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:44px}
+.head h1{font-size:clamp(46px,8vw,104px);font-weight:300;letter-spacing:-0.03em;line-height:.98;text-transform:uppercase}
+.head h1 em{font-style:italic;text-transform:none;color:var(--accent-ink)}
+.head .intro{max-width:60ch;color:var(--muted);font-size:17px;margin-top:26px;border-top:1px solid var(--line);padding-top:24px}
+
+.cases{padding:40px 0 40px}
+.case{border-top:1px solid var(--ink);padding:52px 0}
+.case:first-child{border-top:1px solid var(--line)}
+.case-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.case-top .idx{font-family:'Fraunces',serif;font-style:italic;color:var(--accent-ink);font-size:15px;margin-right:12px}
+.case h2{font-size:clamp(30px,4.4vw,46px);font-weight:300;margin-bottom:8px}
+.case .role{font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.04em}
+.case-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;margin-top:22px}
+@media(max-width:760px){.case-grid{grid-template-columns:1fr;gap:26px}}
+.block{margin-bottom:22px}
+.block .k{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:8px;display:block}
+.block p{color:var(--ink-2);font-size:15px}
+.did{list-style:none}
+.did li{position:relative;padding-left:20px;margin-bottom:10px;font-size:15px;color:var(--ink-2)}
+.did li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.result{border:1px solid var(--line);background:var(--paper-2);border-radius:2px;padding:22px 24px}
+.result .k{color:var(--accent-ink)}
+.result li{margin-bottom:10px}
+.metric{font-family:'Fraunces',serif;font-weight:400;color:var(--accent-ink);font-style:italic}
+.skills{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+.skills span{font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--muted);border:1px solid var(--line);border-radius:2px;padding:5px 10px}
+
+.cta{padding:110px 0 130px;text-align:center;border-top:1px solid var(--line)}
+.cta h2{font-size:clamp(38px,7vw,84px);font-weight:300;letter-spacing:-0.02em;margin-bottom:22px;line-height:1}
+.cta h2 em{font-style:italic;color:var(--accent-ink)}
+.cta p{color:var(--muted);max-width:46ch;margin:0 auto 40px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:14px 26px;border-radius:2px;border:1px solid var(--ink);transition:background .25s,color .25s,border-color .25s}
+.btn:hover{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--paper)}
+footer{border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:24px 0;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1!important;transform:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html">Emin Beganovic</a>
+    <div class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#process">Process</a>
+      <a href="case-studies.html">Case studies</a>
+      <a class="nav-cta" href="index.html#contact">Book a conversation</a>
+    </div>
+  </div>
+</nav>
+
+<header class="head">
+  <div class="wrap">
+    <div class="top-meta">
+      <span class="lab">Ref. EB-CASES-01 &nbsp;/&nbsp; Selected work</span>
+      <span class="lab"><a href="index.html" style="border-bottom:1px solid var(--line)">← Back to home</a></span>
+    </div>
+    <h1>Case<br><em>studies.</em></h1>
+    <p class="intro">Three times, companies have handed me their entire marketing operation — and once, a startup handed me a blank page. Here is what I did with each, in the same shape every time: the challenge, the work, and the result.</p>
+  </div>
+</header>
+
+<main class="cases">
+  <div class="wrap">
+
+    <article class="case reveal">
+      <div class="case-top">
+        <div><h2><span class="idx">01</span>Mertz Taggart</h2><span class="role">Head of Marketing · US healthcare M&amp;A advisory · Remote · 2023–Present</span></div>
+        <span class="lab">Ref. EB-MT</span>
+      </div>
+      <div class="case-grid">
+        <div>
+          <div class="block"><span class="k">Context</span><p>A firm that advises healthcare-company owners through mergers and acquisitions — a high-trust, high-consideration category where credibility and findability are everything. I serve as primary marketing counsel to firm leadership.</p></div>
+          <div class="block"><span class="k">Challenge</span><p>Build a marketing function that matched the seniority of the work: a website that earns trust on arrival, discoverability as buyers shift to AI search, and one accountable owner — delivered remotely across time zones.</p></div>
+        </div>
+        <div>
+          <div class="block"><span class="k">What I did</span>
+            <ul class="did">
+              <li>Rebuilt the core website from scratch — strategy, design, content, implementation — as a solo build.</li>
+              <li>Extended discoverability across traditional and AI-driven search: technical SEO, GEO, and JSON-LD structured data.</li>
+              <li>Acted as strategic counsel to leadership on messaging, positioning, and direction.</li>
+            </ul>
+          </div>
+          <div class="result"><span class="k">Result</span>
+            <ul class="did">
+              <li>A modern, credibility-first site owned <span class="metric">end-to-end by one person</span>, concept to launch.</li>
+              <li>Expanded presence in both classic and AI search through structured data and GEO.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="skills"><span>Solo full-site build</span><span>Technical SEO/GEO</span><span>JSON-LD</span><span>Executive counsel</span><span>Remote delivery</span></div>
+    </article>
+
+    <article class="case reveal">
+      <div class="case-top">
+        <div><h2><span class="idx">02</span>Walter Code <span style="font-size:.5em;color:var(--muted)">(now Galeyo)</span></h2><span class="role">Head of Marketing · B2B software development · Sarajevo · 2021–2023</span></div>
+        <span class="lab">Ref. EB-WC</span>
+      </div>
+      <div class="case-grid">
+        <div>
+          <div class="block"><span class="k">Context</span><p>A B2B software development company competing for technical clients in a crowded market. I led the marketing function and a small team.</p></div>
+          <div class="block"><span class="k">Challenge</span><p>Make the brand look and sound like the caliber of engineering it delivered — a dated site was undercutting sales — and grow audience and inbound interest without a large paid budget.</p></div>
+        </div>
+        <div>
+          <div class="block"><span class="k">What I did</span>
+            <ul class="did">
+              <li>Led a 3-person team through a full brand and website overhaul — UX, content structure, and front-end delivery.</li>
+              <li>Rebuilt messaging so the brand matched the technical quality of the work.</li>
+              <li>Ran an organic LinkedIn program: content, cadence, and positioning.</li>
+            </ul>
+          </div>
+          <div class="result"><span class="k">Result</span>
+            <ul class="did">
+              <li><span class="metric">150% organic growth</span> in the company's LinkedIn presence — no paid amplification.</li>
+              <li>A relaunched brand and website that raised the floor on every sales conversation.</li>
+              <li>A mentored, higher-performing marketing team.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="skills"><span>Team leadership</span><span>Brand + website overhaul</span><span>UX &amp; front-end</span><span>Organic social growth</span></div>
+    </article>
+
+    <article class="case reveal">
+      <div class="case-top">
+        <div><h2><span class="idx">03</span>Walter AEC</h2><span class="role">Head of Digital Marketing · B2B engineering / BIM services · Sarajevo · 2021–2023</span></div>
+        <span class="lab">Ref. EB-WA</span>
+      </div>
+      <div class="case-grid">
+        <div>
+          <div class="block"><span class="k">Context</span><p>Highly technical engineering and BIM services — a category where the buyer is an expert and the marketing has to be precise, not promotional.</p></div>
+          <div class="block"><span class="k">Challenge</span><p>Keep marketing rigorously aligned to what the team could deliver, while still generating visibility and demand across content, SEO, and paid.</p></div>
+        </div>
+        <div>
+          <div class="block"><span class="k">What I did</span>
+            <ul class="did">
+              <li>Ran the web presence and integrated execution — content, SEO, and paid — for complex technical services.</li>
+              <li>Kept site messaging aligned with delivery realities to build trust with expert buyers.</li>
+              <li>Represented the brand at industry events, tying marketing to business development.</li>
+            </ul>
+          </div>
+          <div class="result"><span class="k">Result</span>
+            <ul class="did">
+              <li>A coherent, credible web presence with <span class="metric">marketing and delivery in lockstep</span>.</li>
+              <li>Integrated multi-channel execution run by a single accountable owner.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="skills"><span>Technical B2B messaging</span><span>SEO + content + paid</span><span>Event representation</span></div>
+    </article>
+
+    <article class="case reveal">
+      <div class="case-top">
+        <div><h2><span class="idx">04</span>15do3</h2><span class="role">Sales &amp; Marketing · Beauty-tech startup · Sarajevo · 2018–2020</span></div>
+        <span class="lab">Ref. EB-15</span>
+      </div>
+      <div class="case-grid">
+        <div>
+          <div class="block"><span class="k">Context</span><p>An early-stage beauty-tech startup. I joined as an early team member spanning sales and marketing.</p></div>
+          <div class="block"><span class="k">Challenge</span><p>Everything startup: no brand, no site, no playbook, very limited resources. Create momentum from zero and learn what the market wanted.</p></div>
+        </div>
+        <div>
+          <div class="block"><span class="k">What I did</span>
+            <ul class="did">
+              <li>Built the startup's website hands-on.</li>
+              <li>Contributed to go-to-market strategy, direct outreach, and first-customer onboarding.</li>
+              <li>Operated across the full funnel, awareness to first paying customers.</li>
+            </ul>
+          </div>
+          <div class="result"><span class="k">Result</span>
+            <ul class="did">
+              <li>A live product website and the startup's <span class="metric">first customer relationships</span>.</li>
+              <li>The instinct to move fast with limited resources — behind everything since.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="skills"><span>0→1 building</span><span>Hands-on web</span><span>Go-to-market</span><span>Early-customer onboarding</span></div>
+    </article>
+
+  </div>
+</main>
+
+<section class="cta">
+  <div class="wrap">
+    <span class="lab">Your project could be next</span>
+    <h2 style="margin-top:20px">Let's <em>talk</em>.</h2>
+    <p>Bring a goal, a problem, or a half-formed idea — I'll tell you honestly whether and how I can help.</p>
+    <a class="btn" href="index.html#contact">Book a conversation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="yr"></span> Emin Beganovic</span>
+    <span>Selected work · Case studies</span>
+    <span>Sarajevo — Worldwide</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
