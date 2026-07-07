@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f2f7e6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#181c13" media="(prefers-color-scheme: dark)">
+<meta name="author" content="Emin Beganovic">
+<meta name="robots" content="index, follow">
+<title>Emin Beganovic — B2B Marketing · Web &amp; Design</title>
+<meta name="description" content="Emin Beganovic is a B2B marketing consultant who also designs and builds the websites behind the strategy. First he listens, then he builds what your business needs.">
+<meta property="og:title" content="Emin Beganovic — B2B Marketing · Web &amp; Design">
+<meta property="og:description" content="First, I listen. Then I build what you need. B2B marketing, web design and development, SEO/GEO — project-based or embedded with your team.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Emin Beganovic — B2B Marketing · Web &amp; Design">
+<meta name="twitter:description" content="First, I listen. Then I build what you need. B2B marketing, web design and development, SEO/GEO.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23181c13'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='54' font-style='italic' fill='%239cc69b' text-anchor='middle'%3Ee%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Emin Beganovic",
+  "jobTitle": "B2B Marketing Consultant & Web Builder",
+  "email": "mailto:emin.beganovic33@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Sarajevo", "addressCountry": "BA" },
+  "sameAs": ["https://www.linkedin.com/in/eminbeganovic"],
+  "knowsAbout": ["B2B Marketing Strategy", "SEO", "Generative Engine Optimization", "Web Design", "Webflow", "WordPress", "Content Strategy", "Brand Identity", "Business Development"],
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "School of Economics and Business, Sarajevo" }
+}
+</script>
+<style>
+:root{
+  /* palette: #D7F2BA #BDE4A8 #9CC69B #79B4A9 #676F54 */
+  --paper:#f2f7e6;
+  --paper-2:#e3efcd;
+  --tint:#d7f2ba;
+  --ink:#2b3126;
+  --ink-2:#465040;
+  --muted:#676f54;
+  --line:#c6d5ab;
+  --accent:#79b4a9;
+  --accent-ink:#3f7c70;
+  --accent-soft:#9cc69b;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#181c13;
+    --paper-2:#212819;
+    --tint:#242e1c;
+    --ink:#e9f1d9;
+    --ink-2:#ccd7b8;
+    --muted:#99a383;
+    --line:#39422c;
+    --accent:#9cc69b;
+    --accent-ink:#a9d3a8;
+    --accent-soft:#79b4a9;
+  }
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;background:var(--paper)}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',system-ui,sans-serif;
+  font-size:16.5px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--tint);color:var(--ink)}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:400;line-height:1.08;letter-spacing:-0.015em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;position:relative;z-index:2}
+section{position:relative}
+
+/* ---------- micro labels ---------- */
+.lab{
+  font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);
+}
+.lab b{color:var(--ink);font-weight:600}
+
+/* ---------- preloader ---------- */
+#loader{
+  position:fixed;inset:0;z-index:200;background:var(--paper);
+  display:flex;align-items:flex-end;justify-content:space-between;
+  padding:28px 32px;
+  transition:transform .9s cubic-bezier(.76,0,.24,1);
+}
+#loader.done{transform:translateY(-101%)}
+#loader .pct{
+  font-family:'Fraunces',serif;font-weight:300;font-size:clamp(64px,12vw,140px);
+  line-height:.9;color:var(--ink);font-variant-numeric:tabular-nums;
+}
+#loader .lab{align-self:flex-start;margin-top:4px}
+
+/* ---------- progress hairline ---------- */
+#progress{
+  position:fixed;top:0;left:0;height:2px;width:100%;z-index:100;
+  transform-origin:0 50%;transform:scaleX(0);
+  background:linear-gradient(90deg,var(--accent),var(--accent-soft));
+}
+
+/* ---------- fixed HUD (dims + time) ---------- */
+.hud{
+  position:fixed;z-index:60;font-size:10.5px;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  pointer-events:none;font-variant-numeric:tabular-nums;
+}
+#hud-dims{left:28px;bottom:22px}
+#hud-time{right:28px;bottom:22px}
+@media(max-width:900px){.hud{display:none}}
+
+/* ---------- dot nav ---------- */
+#dots{
+  position:fixed;right:26px;top:50%;transform:translateY(-50%);z-index:60;
+  display:flex;flex-direction:column;gap:14px;align-items:center;
+}
+#dots a{
+  width:7px;height:7px;border-radius:50%;
+  border:1px solid var(--muted);background:transparent;
+  transition:all .3s ease;position:relative;
+}
+#dots a::after{
+  content:attr(data-label);position:absolute;right:18px;top:50%;translate:0 -50%;
+  font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);opacity:0;transition:opacity .25s;white-space:nowrap;pointer-events:none;
+}
+#dots a:hover::after{opacity:1}
+#dots a.active{background:var(--accent);border-color:var(--accent);transform:scale(1.4)}
+@media(max-width:900px){#dots{display:none}}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb, var(--paper) 86%, transparent);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:'Fraunces',serif;font-size:17px;font-style:italic;color:var(--ink)}
+.nav-links{display:flex;gap:26px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;align-items:center}
+.nav-links a{color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--accent-ink)}
+.nav-cta{
+  color:var(--paper) !important;background:var(--ink);
+  padding:9px 18px;border-radius:2px;transition:background .25s,color .25s;
+}
+.nav-cta:hover{background:var(--accent-ink)}
+@media(max-width:720px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ---------- hero ---------- */
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 40px;overflow:hidden}
+.hero .top-meta{
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding-top:42px;
+}
+.hero .avail{display:flex;align-items:center;gap:8px}
+.hero .avail i{
+  width:7px;height:7px;border-radius:50%;background:var(--accent-ink);display:inline-block;
+  animation:blink 2.2s ease-in-out infinite;
+}
+@keyframes blink{50%{opacity:.25}}
+.hero-name .line{overflow:hidden;display:block}
+.hero-name .line > span{
+  display:block;transform:translateY(112%);
+  transition:transform 1s cubic-bezier(.22,1,.36,1);
+}
+body.loaded .hero-name .line > span{transform:none}
+.hero-name .line:nth-child(2) > span{transition-delay:.12s}
+.hero-name{
+  font-size:clamp(64px,13.5vw,168px);
+  font-weight:300;letter-spacing:-0.03em;line-height:.95;
+  text-transform:uppercase;margin:56px 0 34px;
+}
+.hero-name em{font-style:italic;font-weight:300;text-transform:none;color:var(--accent-ink)}
+.hero-sub{
+  display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:end;
+  border-top:1px solid var(--line);padding-top:26px;
+}
+@media(max-width:760px){.hero-sub{grid-template-columns:1fr}}
+.hero-sub .state{
+  font-family:'Fraunces',serif;font-size:clamp(21px,2.6vw,28px);font-weight:300;line-height:1.3;
+}
+.hero-sub .state em{font-style:italic;color:var(--accent-ink);position:relative;white-space:nowrap}
+.hero-sub .state em svg{position:absolute;left:0;bottom:-6px;width:100%;height:10px;overflow:visible}
+.hero-sub .state em svg path{
+  fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;
+  stroke-dasharray:var(--len,300);stroke-dashoffset:var(--len,300);
+  transition:stroke-dashoffset 1.1s cubic-bezier(.22,1,.36,1) 1.15s;
+}
+body.loaded .hero-sub .state em svg path{stroke-dashoffset:0}
+.hero-sub .right{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+@media(min-width:761px){.hero-sub .right{align-items:flex-end;text-align:right}}
+.hero-sub .right p{font-size:14.5px;color:var(--muted);max-width:44ch}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--ink);color:var(--paper);
+  font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  padding:14px 26px;border-radius:2px;border:1px solid var(--ink);
+  cursor:pointer;font-family:'Inter',sans-serif;
+  transition:background .25s,color .25s,border-color .25s;
+}
+.btn:hover{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--paper)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}.reveal.d4{transition-delay:.4s}
+.in-view .reveal,.reveal.in{opacity:1;transform:none}
+
+/* ---------- marquee ---------- */
+.marquee{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:16px 0;overflow:hidden;white-space:nowrap;background:var(--paper);
+}
+.marquee .track{display:inline-flex;animation:scrollx 36s linear infinite;will-change:transform}
+.marquee:hover .track{animation-play-state:paused}
+.marquee span{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:17px;color:var(--ink-2);
+  padding:0 22px;display:inline-flex;align-items:center;gap:22px;
+}
+.marquee span::after{content:"·";color:var(--accent-ink)}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+
+/* ---------- section chrome ---------- */
+.sec{padding:110px 0}
+.sec-head{
+  display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  border-top:1px solid var(--ink);padding-top:14px;margin-bottom:60px;
+}
+.sec-head .idx{font-family:'Fraunces',serif;font-style:italic;color:var(--accent-ink);font-size:15px;margin-right:14px}
+.sec-title{max-width:64ch;margin-bottom:64px}
+.sec-title h2{font-size:clamp(32px,4.8vw,52px);font-weight:300;margin-bottom:18px}
+.sec-title h2 em{font-style:italic;color:var(--accent-ink)}
+.sec-title p{color:var(--muted);font-size:17px;max-width:58ch}
+
+/* ---------- stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:80px}
+@media(max-width:640px){.stats{grid-template-columns:1fr}}
+.stat{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 26px 22px;transition:background .3s}
+.stat:hover{background:var(--paper-2)}
+.stat b{
+  display:block;font-family:'Fraunces',serif;font-weight:300;font-size:clamp(40px,5vw,58px);
+  line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums;
+}
+.stat b .count{color:var(--accent-ink)}
+.stat span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+/* ---------- pillars ---------- */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+@media(max-width:840px){.pillars{grid-template-columns:1fr}}
+.pillar{
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:40px 32px 34px;display:flex;flex-direction:column;gap:16px;
+  position:relative;overflow:hidden;background:var(--paper);
+  transition:color .35s;
+}
+.pillar::before{
+  content:"";position:absolute;inset:0;background:var(--ink);
+  transform:translateY(101%);transition:transform .45s cubic-bezier(.76,0,.24,1);z-index:0;
+}
+.pillar:hover::before{transform:none}
+.pillar:hover{color:var(--paper)}
+.pillar > *{position:relative;z-index:1}
+.pillar .plab{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:color .35s}
+.pillar h3{font-size:clamp(30px,3.4vw,40px);font-weight:300}
+.pillar h3 i{font-style:italic;color:var(--accent-ink)}
+.pillar p{color:var(--muted);font-size:15px;transition:color .35s}
+.pillar:hover p,.pillar:hover .plab{color:color-mix(in srgb, var(--paper) 72%, transparent)}
+.pillar .pf{
+  margin-top:auto;padding-top:18px;border-top:1px solid var(--line);
+  font-size:13px;transition:border-color .35s;
+}
+.pillar:hover .pf{border-color:color-mix(in srgb, var(--paper) 30%, transparent)}
+.pillar .pf b{color:var(--accent-ink);font-weight:600}
+.pillar:hover .pf b{color:var(--paper)}
+
+/* ---------- process ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:step;border-top:1px solid var(--line);border-left:1px solid var(--line);position:relative}
+@media(max-width:840px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.step{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 26px 34px;transition:background .3s}
+.step:hover{background:var(--paper-2)}
+.step .snum{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:15px;color:var(--accent-ink);
+  display:block;margin-bottom:40px;
+}
+.step h3{font-size:24px;font-weight:400;margin-bottom:10px}
+.step p{font-size:14px;color:var(--muted)}
+.flowline{height:2px;background:var(--line);position:relative;overflow:hidden;margin-bottom:-1px}
+.flowline i{
+  position:absolute;inset:0;background:var(--accent);
+  transform-origin:0 50%;transform:scaleX(0);
+  transition:transform 1.6s cubic-bezier(.22,1,.36,1) .2s;
+}
+.in-view .flowline i{transform:scaleX(1)}
+
+/* ---------- modes ---------- */
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:80px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+@media(max-width:720px){.modes{grid-template-columns:1fr}}
+.mode{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:36px 32px;transition:background .3s}
+.mode:hover{background:var(--paper-2)}
+.mode .lab{margin-bottom:18px;display:block}
+.mode .lab b{color:var(--accent-ink)}
+.mode h3{font-size:26px;font-weight:400;margin-bottom:10px}
+.mode h3 em{font-style:italic;color:var(--accent-ink)}
+.mode p{font-size:14.5px;color:var(--muted)}
+
+/* ---------- timeline ---------- */
+.timeline{position:relative;margin-top:10px}
+.timeline .spine{position:absolute;left:50%;top:0;bottom:0;width:1px;translate:-50% 0;background:var(--line)}
+.timeline .spine .fill{position:absolute;top:0;left:0;width:100%;height:0%;background:var(--accent)}
+.tl-item{position:relative;width:50%;padding:0 56px 66px 0}
+.tl-item:nth-child(even){margin-left:50%;padding:0 0 66px 56px}
+.tl-item:last-child{padding-bottom:8px}
+.tl-item .dot{
+  position:absolute;top:30px;right:-5px;width:9px;height:9px;border-radius:50%;
+  background:var(--paper);border:1.5px solid var(--muted);z-index:2;transition:all .4s ease;
+}
+.tl-item:nth-child(even) .dot{right:auto;left:-4px}
+.tl-item.lit .dot{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 6px color-mix(in srgb, var(--accent) 14%, transparent)}
+.tl-card{
+  border:1px solid var(--line);background:var(--paper);padding:32px 30px;border-radius:2px;
+  opacity:0;transform:translateX(-40px);
+  transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1),border-color .3s,background .3s;
+}
+.tl-item:nth-child(even) .tl-card{transform:translateX(40px)}
+.tl-item.lit .tl-card{opacity:1;transform:none}
+.tl-card:hover{border-color:var(--ink);background:var(--paper-2)}
+.tl-card .lab{display:flex;justify-content:space-between;gap:12px;margin-bottom:14px}
+.tl-card .lab b{color:var(--accent-ink)}
+.tl-card h3{font-size:26px;font-weight:400;margin-bottom:4px}
+.tl-card h3 span{font-size:14px;color:var(--muted);font-family:'Inter',sans-serif}
+.tl-card .ctx{font-size:13px;color:var(--muted);margin-bottom:14px}
+.tl-card p{font-size:14.5px;color:var(--ink-2)}
+@media(max-width:760px){
+  .timeline .spine{left:6px}
+  .tl-item,.tl-item:nth-child(even){width:100%;margin-left:0;padding:0 0 50px 36px}
+  .tl-item .dot,.tl-item:nth-child(even) .dot{left:2px;right:auto}
+  .tl-card,.tl-item:nth-child(even) .tl-card{transform:translateY(28px)}
+  .tl-item.lit .tl-card{transform:none}
+}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:70px;align-items:start}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:40px}}
+.about-grid h2{font-size:clamp(30px,4.2vw,44px);font-weight:300;margin-bottom:26px}
+.about-grid h2 em{font-style:italic;color:var(--accent-ink)}
+.about-grid p{color:var(--muted);margin-bottom:18px;font-size:15.5px}
+.about-grid p strong{color:var(--ink);font-weight:600}
+.facts{border-top:1px solid var(--ink)}
+.fact{
+  display:flex;justify-content:space-between;gap:20px;padding:15px 2px;
+  border-bottom:1px solid var(--line);font-size:13.5px;transition:padding .3s,background .3s;
+}
+.fact:hover{background:var(--paper-2);padding-left:10px;padding-right:10px}
+.fact span:first-child{color:var(--muted);font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding-top:3px}
+.fact span:last-child{font-weight:500;text-align:right}
+
+/* ---------- contact ---------- */
+.contact{padding:150px 0 130px;text-align:center;border-top:1px solid var(--line)}
+.contact .lab{justify-content:center;display:flex;margin-bottom:26px}
+.contact h2{font-size:clamp(48px,9vw,110px);font-weight:300;letter-spacing:-0.02em;margin-bottom:26px;line-height:1}
+.contact h2 em{font-style:italic;color:var(--accent-ink)}
+.contact p{color:var(--muted);max-width:48ch;margin:0 auto 52px}
+.cta-row{display:flex;justify-content:center;align-items:stretch;gap:12px;flex-wrap:wrap}
+.cta-row .btn{justify-content:center}
+.copybtn{position:relative}
+.copybtn .done-txt{display:none}
+.copybtn.copied .done-txt{display:inline}
+.copybtn.copied .idle-txt{display:none}
+.contact .end-meta{
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  border-top:1px solid var(--line);margin-top:110px;padding-top:18px;text-align:left;
+}
+.meta-link{border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.meta-link:hover{color:var(--accent-ink);border-color:var(--accent-ink)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);overflow:hidden}
+.foot-marquee{padding:26px 0;border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap}
+.foot-marquee .track{display:inline-flex;animation:scrollx 28s linear infinite}
+.foot-marquee span{
+  font-family:'Fraunces',serif;font-weight:300;font-size:clamp(40px,6vw,72px);
+  text-transform:uppercase;letter-spacing:-0.02em;color:var(--ink);padding:0 30px;
+}
+.foot-marquee span i{font-style:italic;color:var(--accent-ink)}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:24px 0;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .reveal,.tl-card,.hero-name .line > span{opacity:1 !important;transform:none !important}
+  .flowline i{transform:scaleX(1)}
+  .hero-sub .state em svg path{stroke-dashoffset:0}
+  #loader{display:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div id="loader" aria-hidden="true">
+  <span class="lab">Emin Beganovic — Portfolio · Issue N°01</span>
+  <span class="pct" id="pct">0%</span>
+</div>
+
+<div id="progress"></div>
+<span class="hud" id="hud-dims">0 × 0</span>
+<span class="hud" id="hud-time">Sarajevo —:—:—</span>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top">Emin Beganovic</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#proof">Track record</a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="#contact">Book a conversation</a>
+    </div>
+  </div>
+</nav>
+
+<div id="dots" aria-hidden="true">
+  <a href="#top" data-label="Start"></a>
+  <a href="#services" data-label="Services"></a>
+  <a href="#process" data-label="Process"></a>
+  <a href="#proof" data-label="Track record"></a>
+  <a href="#about" data-label="About"></a>
+  <a href="#contact" data-label="Contact"></a>
+</div>
+
+<header class="hero" id="top" data-watch>
+  <div class="wrap">
+    <div class="top-meta">
+      <span class="lab">Ref. EB-072026-R01 &nbsp;/&nbsp; B2B Marketing · Web &amp; Design</span>
+      <span class="lab avail"><i></i> Available for new engagements</span>
+      <span class="lab">Sarajevo · 43.85°N 18.41°E</span>
+    </div>
+    <h1 class="hero-name">
+      <span class="line"><span>Emin</span></span>
+      <span class="line"><span>Beganovic<em>.</em></span></span>
+    </h1>
+    <div class="hero-sub">
+      <p class="state">First, I <em>listen<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path style="--len:210" d="M3 9 C 45 3, 110 11, 197 5"/></svg></em>.<br>Then I build what you need.</p>
+      <div class="right">
+        <p class="reveal d1">A website, a growth engine, or someone who joins your team and leads the marketing day to day — I start by understanding your business, then build around it. One person, from strategy through execution.</p>
+        <div class="hero-cta reveal d2">
+          <a class="btn" href="#contact">Book a conversation</a>
+          <a class="btn ghost" href="#services">Explore ↓</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Marketing Strategy</span><span>Webflow</span><span>SEO / GEO</span><span>Content</span><span>WordPress</span><span>Brand Identity</span><span>Demand Gen</span><span>Wix</span><span>Webinars &amp; Events</span><span>GA4 Analytics</span><span>AI-Assisted Development</span><span>Outreach</span>
+    <span>Marketing Strategy</span><span>Webflow</span><span>SEO / GEO</span><span>Content</span><span>WordPress</span><span>Brand Identity</span><span>Demand Gen</span><span>Wix</span><span>Webinars &amp; Events</span><span>GA4 Analytics</span><span>AI-Assisted Development</span><span>Outreach</span>
+  </div>
+</div>
+
+<section class="sec" id="services" data-watch>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lab"><span class="idx">01</span> Services — What I do</span>
+      <span class="lab">Ref. EB-SRV</span>
+    </div>
+    <div class="sec-title">
+      <h2 class="reveal">It starts with <em>your goals</em>, not my toolkit.</h2>
+      <p class="reveal d1">Every engagement begins the same way: understanding what your business actually needs. From there, I can help in three ways — separately, or as one connected effort.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal d1">
+        <span class="plab">N°1 — Web</span>
+        <h3>Build<i>.</i></h3>
+        <p>Websites taken from first sketch to launch — design, structure, content, and implementation in Webflow, WordPress, Wix, or custom code. Fast, responsive, and built around how your buyers actually decide.</p>
+        <p class="pf"><b>Proof —</b> Rebuilt Mertz Taggart's core site solo; led the full website overhaul at Walter Code, UX through front-end delivery.</p>
+      </div>
+      <div class="pillar reveal d2">
+        <span class="plab">N°2 — Growth</span>
+        <h3>Grow<i>.</i></h3>
+        <p>SEO and GEO that make you findable in both Google and AI-driven search — technical foundations, structured data, content that earns demand, and campaigns that compound instead of burn.</p>
+        <p class="pf"><b>Proof —</b> 150% organic LinkedIn growth at Walter Code; JSON-LD and AI-search discoverability across a US advisory firm's site.</p>
+      </div>
+      <div class="pillar reveal d3">
+        <span class="plab">N°3 — Counsel</span>
+        <h3>Guide<i>.</i></h3>
+        <p>A thinking partner when you need one — marketing strategy, brand and messaging, stakeholder alignment, business development, webinars and events. Clarity first, then execution — as a project partner, or embedded with your team.</p>
+        <p class="pf"><b>Proof —</b> Primary marketing counsel to firm leadership at a healthcare M&amp;A advisory; led and mentored a 3-person team.</p>
+      </div>
+    </div>
+    <div class="stats" data-watch>
+      <div class="stat reveal d1"><b><span class="count" data-target="7">0</span>+</b><span>Years in B2B marketing</span></div>
+      <div class="stat reveal d2"><b><span class="count" data-target="3">0</span>×</b><span>Head of Marketing</span></div>
+      <div class="stat reveal d3"><b><span class="count" data-target="3">0</span></b><span>Industries served</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process" data-watch>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lab"><span class="idx">02</span> Process — How I work</span>
+      <span class="lab">Ref. EB-PRC</span>
+    </div>
+    <div class="sec-title">
+      <h2 class="reveal">A simple process, <em>measured</em> at every step.</h2>
+    </div>
+    <div class="flowline"><i></i></div>
+    <div class="steps">
+      <div class="step reveal d1">
+        <span class="snum">Step 01</span>
+        <h3>Listen</h3>
+        <p>We start with your business goals, not marketing jargon. I ask until I understand what success looks like to you.</p>
+      </div>
+      <div class="step reveal d2">
+        <span class="snum">Step 02</span>
+        <h3>Map</h3>
+        <p>I translate goals into a prioritised plan — what to build, what to fix, what to skip. Scope stays honest.</p>
+      </div>
+      <div class="step reveal d3">
+        <span class="snum">Step 03</span>
+        <h3>Build</h3>
+        <p>I execute it myself — site, content, campaigns. You review working things, not mockups of promises.</p>
+      </div>
+      <div class="step reveal d4">
+        <span class="snum">Step 04</span>
+        <h3>Measure</h3>
+        <p>Dashboards and GA4 reporting tied to the goals from step one. We keep what works, cut what doesn't.</p>
+      </div>
+    </div>
+    <div class="modes">
+      <div class="mode reveal d2">
+        <span class="lab"><b>Mode A</b> — Project-based</span>
+        <h3>You need something <em>built</em>.</h3>
+        <p>A website, a rebrand, an SEO foundation, a campaign. We define it together, I build it, you own it — with clear scope and a clear finish line.</p>
+      </div>
+      <div class="mode reveal d3">
+        <span class="lab"><b>Mode B</b> — Embedded · Freelance</span>
+        <h3>You need marketing <em>led</em>.</h3>
+        <p>I integrate with your team on a flexible freelance arrangement — leading the marketing function day to day, the way I've done in-house for three companies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="proof" data-watch>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lab"><span class="idx">03</span> Track record — Selected roles</span>
+      <span class="lab">Ref. EB-TRK</span>
+    </div>
+    <div class="sec-title">
+      <h2 class="reveal">Trusted with the <em>whole</em> marketing function.</h2>
+      <p class="reveal d1">Three times, companies have handed me their entire marketing operation. Follow the line.</p>
+    </div>
+    <div class="timeline" id="tl">
+      <div class="spine"><div class="fill" id="tl-fill"></div></div>
+      <div class="tl-item">
+        <span class="dot"></span>
+        <div class="tl-card">
+          <span class="lab"><b>Head of Marketing</b><span>2023 — Present</span></span>
+          <h3>Mertz Taggart</h3>
+          <p class="ctx">US healthcare M&amp;A advisory · Remote</p>
+          <p>Primary marketing counsel to firm leadership. Rebuilt the core website from scratch — design through implementation — and expanded discoverability across traditional and AI-driven search with technical SEO/GEO and structured data.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="dot"></span>
+        <div class="tl-card">
+          <span class="lab"><b>Head of Marketing</b><span>2021 — 2023</span></span>
+          <h3>Walter Code <span>(now Galeyo)</span></h3>
+          <p class="ctx">B2B software development · Sarajevo</p>
+          <p>Led a 3-person team through a full brand and website overhaul, owning UX, content structure, and front-end delivery. Scaled the company's LinkedIn presence by 150% — organically.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="dot"></span>
+        <div class="tl-card">
+          <span class="lab"><b>Head of Digital Marketing</b><span>2021 — 2023</span></span>
+          <h3>Walter AEC</h3>
+          <p class="ctx">B2B engineering / BIM services · Sarajevo</p>
+          <p>Ran the web presence and integrated execution — content, SEO, paid — for highly technical services, keeping site messaging aligned with delivery realities. Represented the brand at industry events.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="dot"></span>
+        <div class="tl-card">
+          <span class="lab"><b>Sales &amp; Marketing</b><span>2018 — 2020</span></span>
+          <h3>15do3</h3>
+          <p class="ctx">Beauty-tech startup · Sarajevo</p>
+          <p>Early-stage team member — built the startup's website hands-on and contributed to go-to-market strategy, direct outreach, and first customer onboarding. Where I learned to move fast with limited resources.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="about" data-watch>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lab"><span class="idx">04</span> About — The person behind it</span>
+      <span class="lab">Ref. EB-ABT</span>
+    </div>
+    <div class="about-grid">
+      <div>
+        <h2 class="reveal">Systems thinker, <em>hands-on</em> builder.</h2>
+        <p class="reveal d1">I started out teaching English to corporate teams across cultures — which taught me the skill underneath all marketing: <strong>making complicated things clear.</strong></p>
+        <p class="reveal d2">Since then I've spent seven years running marketing for B2B companies in software, engineering, and healthcare M&amp;A — always as the person who both drew the strategy <strong>and</strong> built the thing. I studied financial and marketing management, but most of what I know came from shipping: websites, campaigns, brands, events, and lately AI-assisted tools and automations.</p>
+        <p class="reveal d3">I work best with founders and small teams who want one accountable partner — someone who listens first, and can then either build what's needed or join the team and lead marketing end to end. If that sounds like what you're looking for, let's talk.</p>
+      </div>
+      <div class="facts reveal d2">
+        <div class="fact"><span>Based in</span><span>Sarajevo, Bosnia &amp; Herzegovina</span></div>
+        <div class="fact"><span>Working with</span><span>Clients worldwide, remote-first</span></div>
+        <div class="fact"><span>Languages</span><span>English · Bosnian</span></div>
+        <div class="fact"><span>Education</span><span>BSc Financial &amp; Marketing Management</span></div>
+        <div class="fact"><span>Platforms</span><span>Webflow · WordPress · Wix · custom</span></div>
+        <div class="fact"><span>Technical</span><span>SEO/GEO · JSON-LD · GA4 · HTML/CSS/JS · React</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" data-watch>
+  <div class="wrap">
+    <span class="lab reveal">05 — Contact · No obligation, no jargon</span>
+    <h2 class="reveal">Let's <em>talk</em>.</h2>
+    <p class="reveal d1">Tell me what you're trying to grow. Bring a goal, a problem, or a half-formed idea — I'll tell you honestly whether and how I can help.</p>
+    <div class="reveal d2 cta-row">
+      <button class="btn copybtn" id="copy-email" type="button">
+        <span class="idle-txt">Copy email — emin.beganovic33@gmail.com</span>
+        <span class="done-txt">Email copied ✓</span>
+      </button>
+      <a class="btn ghost" href="mailto:emin.beganovic33@gmail.com?subject=Let's%20talk">Or open mail app</a>
+    </div>
+    <div class="end-meta reveal d3">
+      <span class="lab">Ref. EB-CNT · End of issue N°01</span>
+      <span class="lab">Replies within 24 hours</span>
+      <a class="lab meta-link" href="https://www.linkedin.com/in/eminbeganovic" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-marquee" aria-hidden="true">
+    <div class="track">
+      <span>Emin Beganovic <i>·</i></span><span>First, I listen <i>·</i></span><span>Then I build <i>·</i></span>
+      <span>Emin Beganovic <i>·</i></span><span>First, I listen <i>·</i></span><span>Then I build <i>·</i></span>
+    </div>
+  </div>
+  <div class="wrap foot">
+    <span>© <span id="yr"></span> Emin Beganovic</span>
+    <span>Issue N°01 · Designed &amp; built by me</span>
+    <span>Sarajevo — Worldwide</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ---------- preloader ---------- */
+  var loader = document.getElementById('loader'), pctEl = document.getElementById('pct');
+  function reveal(){ document.body.classList.add('loaded'); }
+  if(reduced){ reveal(); }
+  else{
+    var p = 0;
+    var iv = setInterval(function(){
+      p += Math.max(1, Math.round((100-p)*0.12));
+      if(p >= 100){ p = 100; clearInterval(iv);
+        setTimeout(function(){ loader.classList.add('done'); reveal(); }, 150);
+      }
+      pctEl.textContent = p + '%';
+    }, 40);
+    /* safety: never trap the visitor */
+    setTimeout(function(){ if(!document.body.classList.contains('loaded')){ clearInterval(iv); loader.classList.add('done'); reveal(); } }, 2600);
+  }
+
+  /* ---------- HUD: dims + Sarajevo time ---------- */
+  var dims = document.getElementById('hud-dims'), clock = document.getElementById('hud-time');
+  function setDims(){ dims.textContent = window.innerWidth + ' × ' + window.innerHeight; }
+  setDims(); window.addEventListener('resize', setDims);
+  function setTime(){
+    try{
+      clock.textContent = 'Sarajevo ' + new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit',timeZone:'Europe/Sarajevo'}).format(new Date());
+    }catch(e){ clock.textContent = ''; }
+  }
+  setTime(); setInterval(setTime, 1000);
+
+  /* ---------- copy email ---------- */
+  var cb = document.getElementById('copy-email');
+  cb.addEventListener('click', function(){
+    var done = function(){ cb.classList.add('copied'); setTimeout(function(){ cb.classList.remove('copied'); }, 1800); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText('emin.beganovic33@gmail.com').then(done, done);
+    } else { done(); }
+  });
+
+  /* ---------- section watcher ---------- */
+  var watch = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in-view'); watch.unobserve(e.target); }
+    });
+  },{threshold:0.15});
+  document.querySelectorAll('[data-watch]').forEach(function(s){ watch.observe(s); });
+
+  /* ---------- counters ---------- */
+  function animateCount(el){
+    var target = +el.dataset.target, start = null, dur = 1200;
+    function tick(t){
+      if(!start) start = t;
+      var p = Math.min((t-start)/dur,1);
+      el.textContent = Math.round(target * (1-Math.pow(1-p,3)));
+      if(p<1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var cio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        reduced ? e.target.textContent = e.target.dataset.target : animateCount(e.target);
+        cio.unobserve(e.target);
+      }
+    });
+  },{threshold:0.6});
+  document.querySelectorAll('.count').forEach(function(c){ cio.observe(c); });
+
+  /* ---------- timeline items ---------- */
+  var tio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('lit'); tio.unobserve(e.target); }
+    });
+  },{threshold:0.35});
+  document.querySelectorAll('.tl-item').forEach(function(i){ tio.observe(i); });
+
+  /* ---------- dot nav ---------- */
+  var dotsLinks = Array.prototype.slice.call(document.querySelectorAll('#dots a'));
+  var watched = Array.prototype.slice.call(document.querySelectorAll('[data-watch]')).filter(function(s){ return s.id; });
+  var nio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var id = '#' + e.target.id;
+        dotsLinks.forEach(function(d){ d.classList.toggle('active', d.getAttribute('href')===id); });
+      }
+    });
+  },{rootMargin:'-45% 0px -45% 0px'});
+  watched.forEach(function(s){ nio.observe(s); });
+
+  /* ---------- scroll-linked ---------- */
+  var bar = document.getElementById('progress');
+  var tl = document.getElementById('tl');
+  var fill = document.getElementById('tl-fill');
+  var ticking = false;
+  function onScroll(){
+    if(ticking) return; ticking = true;
+    requestAnimationFrame(function(){
+      var y = window.scrollY, vh = window.innerHeight;
+      var max = document.documentElement.scrollHeight - vh;
+      bar.style.transform = 'scaleX(' + (max>0 ? y/max : 0) + ')';
+      if(tl && !reduced){
+        var r = tl.getBoundingClientRect();
+        var p = Math.min(Math.max((vh*0.72 - r.top) / r.height, 0), 1);
+        fill.style.height = (p*100) + '%';
+      }
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>
