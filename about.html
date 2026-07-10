@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1b1915" media="(prefers-color-scheme: dark)">
+<meta name="author" content="Emin Beganovic">
+<title>About — Emin Beganovic · B2B Marketing Technologist</title>
+<meta name="description" content="About Emin Beganovic — B2B marketing technologist based in Sarajevo, working worldwide. Seven years leading marketing for B2B companies, always as the person who both plans and builds.">
+<meta property="og:title" content="About — Emin Beganovic">
+<meta property="og:description" content="B2B marketing technologist based in Sarajevo, working worldwide. First, I listen. Then I build what you need.">
+<meta property="og:type" content="profile">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23211d18'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='54' font-style='italic' fill='%23c88a62' text-anchor='middle'%3Ee%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf8f4;--paper-2:#f2eee6;--ink:#211d18;--ink-2:#4c463d;
+  --muted:#7d766a;--line:#e6e0d3;--accent:#b0653d;--accent-ink:#96502e;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#1b1915;--paper-2:#232019;--ink:#efeae0;--ink-2:#cfc8ba;
+  --muted:#9a9284;--line:#37322a;--accent:#c88a62;--accent-ink:#d29a72;
+}}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;background:var(--paper)}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--paper-2);color:var(--accent-ink)}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:400;line-height:1.12;letter-spacing:-0.01em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1020px;margin:0 auto;padding:0 28px}
+.lab{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--paper) 90%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Fraunces',serif;font-size:17px;font-style:italic;color:var(--ink)}
+.nav-links{display:flex;gap:28px;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;align-items:center}
+.nav-links a{color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--accent-ink)}
+.nav-cta{color:var(--paper) !important;background:var(--ink);padding:10px 18px;border-radius:3px;transition:background .25s}
+.nav-cta:hover{background:var(--accent-ink)}
+@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}}
+
+.head{padding:96px 0 0}
+.head .top-meta{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:40px}
+.head h1{font-size:clamp(40px,6vw,68px);font-weight:300;letter-spacing:-0.02em}
+.head h1 em{font-style:italic;color:var(--accent-ink)}
+
+.about{padding:70px 0 120px}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:52px}}
+.portrait{position:relative;max-width:340px}
+.portrait img{display:block;width:100%;height:auto;border-radius:4px;border:1px solid var(--line)}
+.portrait::after{
+  content:"";position:absolute;inset:14px -14px -14px 14px;
+  border:1px solid var(--line);border-radius:4px;z-index:-1;
+}
+.portrait figcaption{margin-top:28px;font-size:12.5px;color:var(--muted);letter-spacing:.04em}
+.story h2{font-size:clamp(26px,3.6vw,36px);font-weight:300;margin-bottom:26px}
+.story h2 em{font-style:italic;color:var(--accent-ink)}
+.story p{color:var(--muted);margin-bottom:20px;font-size:16px}
+.story p strong{color:var(--ink);font-weight:600}
+
+.facts-sec{padding:0 0 120px}
+.facts-sec .lab{display:block;margin-bottom:28px}
+.facts{border-top:1px solid var(--ink)}
+.fact{
+  display:flex;justify-content:space-between;gap:20px;padding:17px 2px;
+  border-bottom:1px solid var(--line);font-size:14px;
+}
+.fact span:first-child{color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding-top:3px;flex:none}
+.fact span:last-child{font-weight:500;text-align:right}
+
+.cta{padding:110px 0 120px;text-align:center;border-top:1px solid var(--line)}
+.cta .lab{color:var(--accent-ink)}
+.cta h2{font-size:clamp(38px,6.5vw,76px);font-weight:300;letter-spacing:-0.015em;margin:20px 0 22px;line-height:1.05}
+.cta h2 em{font-style:italic;color:var(--accent-ink)}
+.cta p{color:var(--muted);max-width:46ch;margin:0 auto 44px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:15px 28px;border-radius:3px;border:1px solid var(--ink);transition:background .25s,color .25s,border-color .25s}
+.btn:hover{background:var(--accent-ink);border-color:var(--accent-ink);color:#fff}
+footer{border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:26px 0;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1!important;transform:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html">Emin Beganovic</a>
+    <div class="nav-links">
+      <a href="index.html#services">What I do</a>
+      <a href="index.html#process">How I work</a>
+      <a href="case-studies.html">Case studies</a>
+      <a href="about.html">About</a>
+      <a class="nav-cta" href="index.html#contact">Book a conversation</a>
+    </div>
+  </div>
+</nav>
+
+<header class="head">
+  <div class="wrap">
+    <div class="top-meta">
+      <span class="lab">About</span>
+      <span class="lab"><a href="index.html" style="border-bottom:1px solid var(--line)">← Back to home</a></span>
+    </div>
+    <h1>The person <em>behind it</em>.</h1>
+  </div>
+</header>
+
+<section class="about">
+  <div class="wrap about-grid">
+    <figure class="portrait reveal in">
+      <img src="assets/emin-beganovic.jpg" alt="Portrait of Emin Beganovic" width="800" height="800">
+      <figcaption>Emin Beganovic — Sarajevo, Bosnia &amp; Herzegovina.</figcaption>
+    </figure>
+    <div class="story">
+      <h2 class="reveal in">Systems thinker, <em>hands-on</em> builder.</h2>
+      <p class="reveal in d1">I live in <strong>Sarajevo, Bosnia &amp; Herzegovina</strong>, and work remote-first with clients worldwide — for the past two years that has meant leading marketing for a US firm across a seven-hour time difference, so distributed collaboration is my normal, not an adjustment.</p>
+      <p class="reveal in d1">I started out teaching English to corporate teams across cultures — which taught me the skill underneath all marketing: <strong>making complicated things clear.</strong></p>
+      <p class="reveal in d1">Since then I've spent seven years running marketing for B2B companies in software, engineering, and healthcare M&amp;A — always as the person who both drew the strategy <strong>and</strong> built the thing. I studied financial and marketing management, but most of what I know came from shipping: websites, campaigns, brands, events, and lately AI-assisted tools and automations.</p>
+      <p class="reveal in d1">I work best with founders and small teams who want one accountable partner — someone who listens first, and can then either build what's needed or join the team and lead marketing end to end. If that sounds like what you're looking for, let's talk.</p>
+    </div>
+  </div>
+</section>
+
+<section class="facts-sec">
+  <div class="wrap">
+    <span class="lab">At a glance</span>
+    <div class="facts reveal">
+      <div class="fact"><span>Based in</span><span>Sarajevo, Bosnia &amp; Herzegovina (CET)</span></div>
+      <div class="fact"><span>Working with</span><span>Clients worldwide, remote-first</span></div>
+      <div class="fact"><span>Languages</span><span>English (full professional) · Bosnian (native)</span></div>
+      <div class="fact"><span>Education</span><span>BSc Financial &amp; Marketing Management, Sarajevo</span></div>
+      <div class="fact"><span>Experience</span><span>7+ years B2B · software, engineering, healthcare M&amp;A</span></div>
+      <div class="fact"><span>Platforms</span><span>Webflow · WordPress · Wix · custom</span></div>
+      <div class="fact"><span>Technical</span><span>SEO/GEO · JSON-LD · GA4 · HTML/CSS/JS · React</span></div>
+      <div class="fact"><span>Elsewhere</span><span><a href="https://www.linkedin.com/in/eminbeganovic" rel="noopener" style="border-bottom:1px solid var(--line)">LinkedIn ↗</a></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <span class="lab">No obligation, no jargon</span>
+    <h2>Let's <em>talk</em>.</h2>
+    <p>Bring a goal, a problem, or a half-formed idea — I'll tell you honestly whether and how I can help.</p>
+    <a class="btn" href="index.html#contact">Book a conversation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="yr"></span> Emin Beganovic</span>
+    <span>About</span>
+    <span>Sarajevo — Worldwide</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal:not(.in)').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>

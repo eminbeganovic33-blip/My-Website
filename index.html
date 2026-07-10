@@ -115,35 +115,22 @@ nav{
 .reveal.in{opacity:1;transform:none}
 
 /* ---------- hero ---------- */
-.hero{padding:96px 0 110px;position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:64px;align-items:center}
-@media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:48px}}
+.hero{padding:110px 0 120px;position:relative;overflow:hidden}
 .hero .kicker{display:flex;align-items:center;gap:10px;margin-bottom:34px}
 .hero .kicker i{
   width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;flex:none;
 }
 .hero h1{
-  font-size:clamp(44px,6.5vw,76px);font-weight:300;letter-spacing:-0.02em;
-  margin-bottom:26px;
+  font-size:clamp(48px,7.5vw,88px);font-weight:300;letter-spacing:-0.02em;
+  margin-bottom:28px;
 }
 .hero h1 em{color:var(--accent-ink)}
 .hero .lede{
-  font-family:'Fraunces',serif;font-weight:300;font-size:clamp(20px,2.4vw,25px);
-  line-height:1.45;color:var(--ink-2);max-width:30em;margin-bottom:22px;
+  font-family:'Fraunces',serif;font-weight:300;font-size:clamp(21px,2.6vw,27px);
+  line-height:1.45;color:var(--ink-2);max-width:32em;margin-bottom:22px;
 }
-.hero .sub{color:var(--muted);font-size:15.5px;max-width:54ch;margin-bottom:40px}
+.hero .sub{color:var(--muted);font-size:15.5px;max-width:58ch;margin-bottom:44px}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-.portrait{position:relative;justify-self:end;max-width:340px;width:100%}
-@media(max-width:820px){.portrait{justify-self:start;max-width:280px}}
-.portrait img{
-  display:block;width:100%;height:auto;border-radius:4px;
-  border:1px solid var(--line);
-}
-.portrait::after{
-  content:"";position:absolute;inset:14px -14px -14px 14px;
-  border:1px solid var(--line);border-radius:4px;z-index:-1;
-}
-.portrait figcaption{margin-top:26px;font-size:12px;color:var(--muted);letter-spacing:.05em}
 
 /* ---------- section chrome ---------- */
 .sec{padding:120px 0}
@@ -209,21 +196,6 @@ nav{
 .role .rt{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:10px}
 .role p{font-size:15px;color:var(--muted);max-width:64ch}
 
-/* ---------- about ---------- */
-.about-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:72px;align-items:start}
-@media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:44px}}
-.about-grid h2{font-size:clamp(28px,4vw,40px);font-weight:300;margin:14px 0 26px}
-.about-grid h2 em{color:var(--accent-ink)}
-.about-grid p{color:var(--muted);margin-bottom:18px;font-size:15.5px}
-.about-grid p strong{color:var(--ink);font-weight:600}
-.facts{border-top:1px solid var(--ink)}
-.fact{
-  display:flex;justify-content:space-between;gap:20px;padding:16px 2px;
-  border-bottom:1px solid var(--line);font-size:13.5px;
-}
-.fact span:first-child{color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding-top:3px;flex:none}
-.fact span:last-child{font-weight:500;text-align:right}
-
 /* ---------- contact ---------- */
 .contact{padding:150px 0 140px;text-align:center;border-top:1px solid var(--line)}
 .contact .lab{display:block;margin-bottom:24px;color:var(--accent-ink)}
@@ -263,28 +235,22 @@ footer{border-top:1px solid var(--line)}
       <a href="#services">What I do</a>
       <a href="#process">How I work</a>
       <a href="case-studies.html">Case studies</a>
-      <a href="#about">About</a>
+      <a href="about.html">About</a>
       <a class="nav-cta" href="#contact">Book a conversation</a>
     </div>
   </div>
 </nav>
 
 <header class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="lab kicker reveal in"><i></i> B2B Marketing Technologist · Available for new engagements</p>
-      <h1 class="reveal in">Strategy that <em>ships</em>.</h1>
-      <p class="lede reveal in d1">I'm Emin Beganovic. I set the marketing strategy, run the growth — and build the websites, analytics, and tools behind it myself.</p>
-      <p class="sub reveal in d1">Most companies hire a strategist who hands them a deck, then a builder who guesses at the intent. I'm one person who does both: seven years leading B2B marketing, with the technical craft to take every plan to a live, measurable result.</p>
-      <div class="hero-cta reveal in d2">
-        <a class="btn" href="#contact">Book a conversation</a>
-        <a class="btn ghost" href="case-studies.html">See the work</a>
-      </div>
+  <div class="wrap">
+    <p class="lab kicker reveal in"><i></i> B2B Marketing Technologist · Available for new engagements</p>
+    <h1 class="reveal in">Strategy that <em>ships</em>.</h1>
+    <p class="lede reveal in d1">I'm Emin Beganovic. I set the marketing strategy, run the growth — and build the websites, analytics, and tools behind it myself.</p>
+    <p class="sub reveal in d1">Most companies hire a strategist who hands them a deck, then a builder who guesses at the intent. I'm one person who does both: seven years leading B2B marketing, with the technical craft to take every plan to a live, measurable result.</p>
+    <div class="hero-cta reveal in d2">
+      <a class="btn" href="#contact">Book a conversation</a>
+      <a class="btn ghost" href="case-studies.html">See the work</a>
     </div>
-    <figure class="portrait reveal in d2">
-      <img src="assets/emin-beganovic.jpg" alt="Portrait of Emin Beganovic" width="800" height="800">
-      <figcaption>Sarajevo, Bosnia &amp; Herzegovina — working worldwide, remote-first.</figcaption>
-    </figure>
   </div>
 </header>
 
@@ -414,21 +380,10 @@ footer{border-top:1px solid var(--line)}
 <section class="sec" id="about">
   <div class="wrap">
     <div class="sec-head"><span class="lab">04 — About</span></div>
-    <div class="about-grid">
-      <div>
-        <h2 class="reveal">Systems thinker, <em>hands-on</em> builder.</h2>
-        <p class="reveal d1">I started out teaching English to corporate teams across cultures — which taught me the skill underneath all marketing: <strong>making complicated things clear.</strong></p>
-        <p class="reveal d1">Since then I've spent seven years running marketing for B2B companies in software, engineering, and healthcare M&amp;A — always as the person who both drew the strategy <strong>and</strong> built the thing. I studied financial and marketing management, but most of what I know came from shipping: websites, campaigns, brands, events, and lately AI-assisted tools and automations.</p>
-        <p class="reveal d2">I work best with founders and small teams who want one accountable partner — someone who listens first, and can then either build what's needed or join the team and lead marketing end to end. If that sounds like what you're looking for, let's talk.</p>
-      </div>
-      <div class="facts reveal d1">
-        <div class="fact"><span>Based in</span><span>Sarajevo, Bosnia &amp; Herzegovina</span></div>
-        <div class="fact"><span>Working with</span><span>Clients worldwide, remote-first</span></div>
-        <div class="fact"><span>Languages</span><span>English · Bosnian</span></div>
-        <div class="fact"><span>Education</span><span>BSc Financial &amp; Marketing Management</span></div>
-        <div class="fact"><span>Platforms</span><span>Webflow · WordPress · Wix · custom</span></div>
-        <div class="fact"><span>Technical</span><span>SEO/GEO · JSON-LD · GA4 · HTML/CSS/JS · React</span></div>
-      </div>
+    <div class="sec-title" style="margin-bottom:0">
+      <h2 class="reveal">Systems thinker, <em>hands-on</em> builder.</h2>
+      <p class="reveal d1">Seven years running marketing for B2B companies in software, engineering, and healthcare M&amp;A — always as the person who both drew the strategy and built the thing. Based in Sarajevo, working worldwide.</p>
+      <p class="reveal d1" style="margin-top:22px"><a class="btn ghost" href="about.html">More about me</a></p>
     </div>
   </div>
 </section>
